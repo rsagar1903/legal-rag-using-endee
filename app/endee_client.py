@@ -1,8 +1,11 @@
+import os
 from endee import Endee, Precision
 
+# Connect once using Environment Variable, fallback to localhost for local testing
+ENDEE_URL = os.getenv("ENDEE_HOST", "http://localhost:8080/api/v1")
 # Connect once
 client = Endee()
-client.set_base_url("http://localhost:8080/api/v1")
+client.set_base_url(ENDEE_URL)
 
 
 def create_index(index_name: str, dim: int = 384):
