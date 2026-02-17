@@ -102,8 +102,7 @@ cp .env.example .env
 nano .env  # Add your OpenAI API key
 
 # 3. Start the system
-chmod +x start.sh
-./start.sh
+docker-compose up -d --build
 
 # 4. Build ID maps (first time only - in a new terminal)
 docker-compose exec app python scripts/build_id_maps.py
@@ -140,11 +139,7 @@ OPENAI_API_KEY=sk-your-actual-openai-key-here
 
 #### **Step 3: Start Docker Services**
 ```bash
-# Make scripts executable
-chmod +x start.sh stop.sh setup.sh
-
-# Start services
-./start.sh
+docker-compose up -d --build
 ```
 
 This will:
